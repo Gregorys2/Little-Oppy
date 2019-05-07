@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A38DAD57FCF545983A7D931 /* Pods_Little_Oppy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F16576B210C11C019B1EC0A /* Pods_Little_Oppy.framework */; };
 		7FA993772270FEDF00346900 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA993762270FEDF00346900 /* AppDelegate.swift */; };
 		7FA993792270FEDF00346900 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA993782270FEDF00346900 /* ViewController.swift */; };
 		7FA9937C2270FEDF00346900 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FA9937A2270FEDF00346900 /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F16576B210C11C019B1EC0A /* Pods_Little_Oppy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Little_Oppy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D62D90F6C5DB9242042473C /* Pods-Little Oppy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Little Oppy.release.xcconfig"; path = "Target Support Files/Pods-Little Oppy/Pods-Little Oppy.release.xcconfig"; sourceTree = "<group>"; };
+		724C8A53EFA164AE4EEE01E4 /* Pods-Little Oppy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Little Oppy.debug.xcconfig"; path = "Target Support Files/Pods-Little Oppy/Pods-Little Oppy.debug.xcconfig"; sourceTree = "<group>"; };
 		7FA993732270FEDE00346900 /* Little Oppy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Little Oppy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FA993762270FEDF00346900 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FA993782270FEDF00346900 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A38DAD57FCF545983A7D931 /* Pods_Little_Oppy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		414A0648E78BE79A9192F10D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2F16576B210C11C019B1EC0A /* Pods_Little_Oppy.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7FA9936A2270FEDE00346900 = {
 			isa = PBXGroup;
 			children = (
 				7FA993752270FEDF00346900 /* Little Oppy */,
 				7FA993742270FEDE00346900 /* Products */,
+				FAD967AC8F4590FD0AAF8C5C /* Pods */,
+				414A0648E78BE79A9192F10D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +79,15 @@
 			path = "Little Oppy";
 			sourceTree = "<group>";
 		};
+		FAD967AC8F4590FD0AAF8C5C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				724C8A53EFA164AE4EEE01E4 /* Pods-Little Oppy.debug.xcconfig */,
+				3D62D90F6C5DB9242042473C /* Pods-Little Oppy.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7FA993852270FEE100346900 /* Build configuration list for PBXNativeTarget "Little Oppy" */;
 			buildPhases = (
+				AF0840DCA0B5D59F2A207799 /* [CP] Check Pods Manifest.lock */,
 				7FA9936F2270FEDE00346900 /* Sources */,
 				7FA993702270FEDE00346900 /* Frameworks */,
 				7FA993712270FEDE00346900 /* Resources */,
+				0162C2EA57DFDF08E106EC93 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0162C2EA57DFDF08E106EC93 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Little Oppy/Pods-Little Oppy-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Phidget22Swift/Phidget22Swift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Phidget22Swift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Little Oppy/Pods-Little Oppy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF0840DCA0B5D59F2A207799 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Little Oppy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7FA9936F2270FEDE00346900 /* Sources */ = {
@@ -280,10 +353,12 @@
 		};
 		7FA993862270FEE100346900 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 724C8A53EFA164AE4EEE01E4 /* Pods-Little Oppy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Little Oppy/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -297,10 +372,12 @@
 		};
 		7FA993872270FEE100346900 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D62D90F6C5DB9242042473C /* Pods-Little Oppy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Little Oppy/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

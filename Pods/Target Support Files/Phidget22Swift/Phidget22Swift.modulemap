@@ -1,0 +1,6 @@
+framework module Phidget22Swift {
+  umbrella header "Phidget22Swift-umbrella.h"
+
+  export *
+  module * { export * }
+}

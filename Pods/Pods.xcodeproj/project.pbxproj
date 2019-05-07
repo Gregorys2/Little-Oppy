@@ -1,0 +1,925 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		08A6F34232C21F49E6B2143AD7524234 /* SpatialBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBD347D639EA96BAF9BACF7ECA61953 /* SpatialBase.swift */; };
+		0D734F88FFE34F15A4D73C9BCD08C1C6 /* LightSensorBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF8492E8F70F17F325C294F992EAD27 /* LightSensorBase.swift */; };
+		0DEED71AD5DC0455A3107B56F9AFCE57 /* GPS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C131BD25BCBA374DD9839EBEE6B88 /* GPS.swift */; };
+		0EAE3F213BDC77BAD4BB47A91CBCEAEB /* Accelerometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C198E8DB1E43B4207D90F653801B294A /* Accelerometer.swift */; };
+		0FF7DBE1F4A54A23D9DBB74830B79C57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
+		104627DC92B13887F897A1389E2526B4 /* DCMotor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE86E22BBCF05763A37978EF541D3218 /* DCMotor.swift */; };
+		1156FF15B15DDEFAE19954EBE1401CC7 /* RCServoBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83EC17F352826194E6C977CF781AE7D /* RCServoBase.swift */; };
+		200C6B38144CC9BA69ABF40F9F283576 /* phidget22.h in Headers */ = {isa = PBXBuildFile; fileRef = 0377A788B04607E6F0440AE72F47A573 /* phidget22.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		22FEC62069B7D913DE549494C028BCC7 /* ResistanceInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1666AC984C929FF2D91B3B157268E4E /* ResistanceInput.swift */; };
+		2375BED7DAAC432C33CBF73F478BC036 /* PowerGuard.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAE8BB4135B966EF9761EF3D7E1F623 /* PowerGuard.swift */; };
+		272C299B52855FA308B436275112B7F3 /* HumiditySensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57116AF3F75D56FD9C147DF08FF6A716 /* HumiditySensor.swift */; };
+		284FC229DD0C778BF463E65AA80B371F /* LogBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2583C179842AA51D8BE7B2317C9D2F38 /* LogBase.swift */; };
+		2A9AABFBB018A8CB5491250E3413EF83 /* PressureSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA435D86E8A114157E741825A356C83E /* PressureSensor.swift */; };
+		2BFFBDD01457F53712D0CD1376535EB1 /* DistanceSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9880C5E0518B513F45283D4C9B3C6121 /* DistanceSensor.swift */; };
+		2E1B7D4504B806042EAF00969BD87466 /* PHSensorBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F913CD96B371A6C6D9BEE7F689A2D7 /* PHSensorBase.swift */; };
+		32F00994E608DEDE7FA92FC98640EEAB /* Net.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C87F526CC79C0F9B8CD164589F53716 /* Net.swift */; };
+		375B5399CF8AADA038E96BF08AB99E6A /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD380036173A6DC992011B4813A63195 /* Dictionary.swift */; };
+		384FC179A28C0234F81EAE790AE504A5 /* Gyroscope.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F564ACD7FEE246CD93C4BECF917639 /* Gyroscope.swift */; };
+		3BCB901EA0DD9EBCEC374CF6C2D8B3E1 /* MotorPositionControllerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E8D3B8825CB589628448FF6FD1119C /* MotorPositionControllerBase.swift */; };
+		3C5A4BF87228C6516C8A6A381997FA82 /* GPSBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B69955FC46FE11BB42882B2D97B9CD /* GPSBase.swift */; };
+		41BA2C459CB815D55FA7B29738531478 /* DigitalInputBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EABF99D3EAF26BA8A5FB9804A58CFA9 /* DigitalInputBase.swift */; };
+		473EC4407368348435E7EE6DAF1C09E1 /* AsyncCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018395079B545452F985570E3334AD53 /* AsyncCallback.swift */; };
+		476F79C8E302F84C78B1361961669979 /* VoltageOutputBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAC5D08EAC33E18A76E44D21E6D2A7A /* VoltageOutputBase.swift */; };
+		4A428CDE2B346E66C54611FA51FC6BA0 /* DistanceSensorBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD2ED9DE38B18391AEDDC240C130EEA /* DistanceSensorBase.swift */; };
+		4EF40EBCB8C6D38C3CFC5F1D299C7DCF /* Phidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD87CBCAA13E848B7CCCCB54491C679 /* Phidget.swift */; };
+		5814D0C74B44192762F46A681A8EE694 /* RFID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294511206E45DCC2E8BB2F5569F8BCDE /* RFID.swift */; };
+		5B6DE597EC2B334334B294C1879C119B /* PowerGuardBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB135DDE769095314CE2A883964ECF8 /* PowerGuardBase.swift */; };
+		5CB3394C9A6628FC00DA99C88CB795C4 /* FrequencyCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3431B72CA919EB5ABA83C5DDD7C769B /* FrequencyCounter.swift */; };
+		61B7E76F32815CF2B6BCE3580CFABAD0 /* MagnetometerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3860B33F2E19F33E77E5DFA734031E /* MagnetometerBase.swift */; };
+		6749B7D3004231858A10DE9AB1D06798 /* PHSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6023EE3BF7B9D5A2A35BAE60567F03 /* PHSensor.swift */; };
+		685A59292A3F0F3BB42690D1C097799C /* NetBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342671F831666AA5046780C6DAB01A17 /* NetBase.swift */; };
+		6A52BCB9EEECC926B55804AAE46A0265 /* PhidgetBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78962BE85170AAAA2FE270893CD54A8E /* PhidgetBase.swift */; };
+		6E27EA8636D0D7869EE77E23C327211B /* Phidget22Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 83033AD7DB6C21C40AD8CAB307F79370 /* Phidget22Swift-dummy.m */; };
+		715485EC9D08FAF0A002A074D196B94C /* Stepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E9F3714D6D7EB7EB0E77C1EDC006AE /* Stepper.swift */; };
+		72950BCC07C1C97D3C4F9755AB777166 /* PhidgetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27785B953C5FC541F299E730C2564C /* PhidgetError.swift */; };
+		79193E09AE9206B4B10F01BC2A4691E3 /* VoltageRatioInputBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BBA2B6A2B70A8A3B26437BEEB0461D /* VoltageRatioInputBase.swift */; };
+		792C4777D11DBD235BB6E8136FF99F32 /* BLDCMotor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92410DF88163158752A5AF174D47A8DD /* BLDCMotor.swift */; };
+		7B3E105165AEBAD81171AAF038D6F651 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E95E294DF3F995652C68AD331F0F8D7 /* Types.swift */; };
+		7D34B4F527DC83554E00E4641249289C /* LightSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBA6CB6668523F53E728640CE08EF27 /* LightSensor.swift */; };
+		83302B52A28FDE3A0FC029063D86B485 /* HubBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771A6EFAE739E239093BDE4C0EBC7CFE /* HubBase.swift */; };
+		87BA9DAB8560BAB992F49C519B2C2889 /* SoundSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9263B91708083B12689D3F279DAA8DF /* SoundSensor.swift */; };
+		8BE73F635A17A12A4092D964E85CB808 /* Spatial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7002F1B95F74728BED847A0E78B8A868 /* Spatial.swift */; };
+		8E4E5BD9ACE632AE9A1119BFAF75DDBD /* RCServo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E761F0E76CDACD5310C7220CD880EE61 /* RCServo.swift */; };
+		8E8BEBCC08AE95D34674BBD908EDF287 /* TemperatureSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FCFE0AB61718AEC3A0F43C5D6C6718 /* TemperatureSensor.swift */; };
+		94C5C5272BAA3ED2E6EC647BF525D64F /* ManagerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324DF38D169A388C1808BF8A6A492969 /* ManagerBase.swift */; };
+		955376F52F37CC6B3142775E1D855601 /* IRBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8E03D84F25AD89C6F0D977828821D2 /* IRBase.swift */; };
+		97810C347D974C778E2A24B2FE0B6E44 /* ResistanceInputBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151530830EAF79E56342BCB78BCDCF1 /* ResistanceInputBase.swift */; };
+		9C27E15E7D9271C4192FA821ECC5F558 /* LCDBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382F166B5564C130E10201689566E600 /* LCDBase.swift */; };
+		A0259EE24DAF6DC8A7AE069803BCFDD9 /* IR.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCAB2DDDB7C8C8066E55112411A4FA /* IR.swift */; };
+		A44A53A6C314C8B5020D779A4120C484 /* TemperatureSensorBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C363731854B85E45051A5F2118FFCF5E /* TemperatureSensorBase.swift */; };
+		A4A5F12300B687C24680FBC2E720AC9F /* BLDCMotorBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247D35497E30786DF49E9F3B0A68910A /* BLDCMotorBase.swift */; };
+		A7BB6C1923C338C79F9912B2AA74AED3 /* EncoderBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFC2B55B4EE4144F7A3A37AB26B5526 /* EncoderBase.swift */; };
+		B1B55274B5E8AA07848E9B4182DED6AE /* DigitalOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE093E27BB9F158B7D4A7D50D2FA660C /* DigitalOutput.swift */; };
+		B3F1964477ACDEB9DC1125586D4D028D /* VoltageRatioInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB0B2C7F6AF3A933962212E7C53391 /* VoltageRatioInput.swift */; };
+		B9FF4B4A10E661536FCDDA67A7CF160C /* Magnetometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530420AA694B49FA03812EC483D4AC0F /* Magnetometer.swift */; };
+		BB3134E7EA58281E4EFE048E73AB5ECD /* SoundSensorBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21228698EC730ADB42A43610DCFC344 /* SoundSensorBase.swift */; };
+		BBBBEC72F3C67E75B268CEADF6CC607B /* Hub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B3BB65152221D0B66616099C28B554 /* Hub.swift */; };
+		BDB2C131ECFA7EEB2FA999E93BC1E860 /* StepperBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9136F777DC5B7E8BA4A23253B9BBDC6A /* StepperBase.swift */; };
+		BFC8F3DAA268EBDB264E006237691185 /* Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7278F050601361EB1102890FB7D5C0 /* Encoder.swift */; };
+		C0F11A4E64CD90F3B8E2BC455A577AC8 /* VoltageOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDF9AE962B97C79F1B35CF9075E2146 /* VoltageOutput.swift */; };
+		C1B3AC1A3FAD698ED2EFC8FC27B59BF7 /* DCMotorBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A0D3FB88AE78CDF4C1706BFFA1B7F /* DCMotorBase.swift */; };
+		C3C4916190A64C96E96B735A80BBE182 /* GyroscopeBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD31544AFCD92056FAC2D1E1764FE8C6 /* GyroscopeBase.swift */; };
+		C6BC925FEE4D92F9FCABE277A9C4164A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1231EAB7B9ADC4B7F37F2A96DE5FD9EE /* Event.swift */; };
+		C782161232123BC8957583FCDD145F29 /* VoltageInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4921C46C823B75054062B4EA6EE6C6F0 /* VoltageInput.swift */; };
+		CA77F98D9D40996777C50B02F0AF3ACA /* DigitalInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE06128151038CEB28C320FF777E237 /* DigitalInput.swift */; };
+		CE501794A1971D3D7DF7AEBAFE973C85 /* Pods-Little Oppy-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 175AB27A1AEAB920F3A9D4AD6835C2D2 /* Pods-Little Oppy-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CF53822838645A4CD3B217AA0E6D121B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
+		D30F00158BF8B0A612F0454373CF4629 /* DictionaryBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCAE6E9BB8B211838699B0EF7972AD /* DictionaryBase.swift */; };
+		D5097CA2ED85C1A4C02CCFD00C1B17F1 /* RFIDBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C6D1CC602A77FB745CCCBBAAF9A3F2 /* RFIDBase.swift */; };
+		D5B0FF35AAD567664747E752ADEE5583 /* LCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA600B26628D9D3F36D120095EF5D86 /* LCD.swift */; };
+		DB334F49FC69CC2D35354945378C39CE /* DigitalOutputBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733BBBCC7294E559D93AF3475D1DE542 /* DigitalOutputBase.swift */; };
+		DB8B0D1E9689A85F142CD95459E26C68 /* HumiditySensorBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FA338A26E0D8D92496A1A90A0136FE /* HumiditySensorBase.swift */; };
+		DDFA5C8C2B3EEED0C66F9D7787BDCE5A /* AccelerometerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D642BEA3A35CE57EAF3F5131B1792F8 /* AccelerometerBase.swift */; };
+		DE8A61C5F9BA66C73499475CA814A194 /* MotorPositionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBF5DD6156B9F80F20CAA273FE36852 /* MotorPositionController.swift */; };
+		DF5ED3B740A5AE8C35B717D92366D287 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87623D0EC23B6F45869CE2043E19375F /* Log.swift */; };
+		E19E127AFBD5068C038BD69920DCF7B9 /* CurrentInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17401438A401A730673C3C7735E0051 /* CurrentInput.swift */; };
+		E36D18F77576FB8D74C11E1FA8398C0B /* VoltageInputBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39FF47E5296247F2E0986CC85825E82 /* VoltageInputBase.swift */; };
+		E6D78C0D493D540E0FB9E9B04EC9FC32 /* CurrentInputBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACEA0B6F9037B995814FEE1CB8EA122 /* CurrentInputBase.swift */; };
+		EA10DA565045A8A9FE624B7492C01C9A /* PressureSensorBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7FDF03566D8E7C38B291D71599B6F7 /* PressureSensorBase.swift */; };
+		EF4D390A91382A78BEDA37E3143FAC3B /* FrequencyCounterBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C858016009E70473C13EDD4540447A /* FrequencyCounterBase.swift */; };
+		F3C831CA281577CC68030694F9925014 /* CapacitiveTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7161921926BF1B7EAD46A5DE818367 /* CapacitiveTouch.swift */; };
+		F474A955E70036D9B2FC26B7BC86D113 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5039135209685A67AD3F415672921CAA /* Manager.swift */; };
+		F90B9A898568BEFC4A54062C7BB2E0FB /* CapacitiveTouchBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B2F3D4AE0E1FC932D5877D7E9960B4 /* CapacitiveTouchBase.swift */; };
+		F94143497470C25D6484261E49155016 /* Phidget22Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 392090B5071A9F9902DDE11BFF873564 /* Phidget22Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD795771A1E38847B944E3139230E570 /* Pods-Little Oppy-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 418E233406C52BF85B8768280B02EB21 /* Pods-Little Oppy-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		79DB7FF3829B29A4ECCCA0818A06F61A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 29A1889BFE06A8A6E61BEA50BAB2E120;
+			remoteInfo = Phidget22Swift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		018395079B545452F985570E3334AD53 /* AsyncCallback.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncCallback.swift; path = src/AsyncCallback.swift; sourceTree = "<group>"; };
+		02E8D3B8825CB589628448FF6FD1119C /* MotorPositionControllerBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MotorPositionControllerBase.swift; path = src/MotorPositionControllerBase.swift; sourceTree = "<group>"; };
+		0377A788B04607E6F0440AE72F47A573 /* phidget22.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = phidget22.h; path = libphidget22/phidget22.h; sourceTree = "<group>"; };
+		03E9F3714D6D7EB7EB0E77C1EDC006AE /* Stepper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stepper.swift; path = src/Stepper.swift; sourceTree = "<group>"; };
+		06FA338A26E0D8D92496A1A90A0136FE /* HumiditySensorBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HumiditySensorBase.swift; path = src/HumiditySensorBase.swift; sourceTree = "<group>"; };
+		0C7FDF03566D8E7C38B291D71599B6F7 /* PressureSensorBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PressureSensorBase.swift; path = src/PressureSensorBase.swift; sourceTree = "<group>"; };
+		11BBA2B6A2B70A8A3B26437BEEB0461D /* VoltageRatioInputBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VoltageRatioInputBase.swift; path = src/VoltageRatioInputBase.swift; sourceTree = "<group>"; };
+		1231EAB7B9ADC4B7F37F2A96DE5FD9EE /* Event.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Event.swift; path = src/Event.swift; sourceTree = "<group>"; };
+		13B2F3D4AE0E1FC932D5877D7E9960B4 /* CapacitiveTouchBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CapacitiveTouchBase.swift; path = src/CapacitiveTouchBase.swift; sourceTree = "<group>"; };
+		175AB27A1AEAB920F3A9D4AD6835C2D2 /* Pods-Little Oppy-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Little Oppy-umbrella.h"; sourceTree = "<group>"; };
+		1E8E03D84F25AD89C6F0D977828821D2 /* IRBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IRBase.swift; path = src/IRBase.swift; sourceTree = "<group>"; };
+		1EB135DDE769095314CE2A883964ECF8 /* PowerGuardBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PowerGuardBase.swift; path = src/PowerGuardBase.swift; sourceTree = "<group>"; };
+		247D35497E30786DF49E9F3B0A68910A /* BLDCMotorBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BLDCMotorBase.swift; path = src/BLDCMotorBase.swift; sourceTree = "<group>"; };
+		2583C179842AA51D8BE7B2317C9D2F38 /* LogBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LogBase.swift; path = src/LogBase.swift; sourceTree = "<group>"; };
+		25B69955FC46FE11BB42882B2D97B9CD /* GPSBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GPSBase.swift; path = src/GPSBase.swift; sourceTree = "<group>"; };
+		294511206E45DCC2E8BB2F5569F8BCDE /* RFID.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RFID.swift; path = src/RFID.swift; sourceTree = "<group>"; };
+		2D642BEA3A35CE57EAF3F5131B1792F8 /* AccelerometerBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AccelerometerBase.swift; path = src/AccelerometerBase.swift; sourceTree = "<group>"; };
+		2E7278F050601361EB1102890FB7D5C0 /* Encoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Encoder.swift; path = src/Encoder.swift; sourceTree = "<group>"; };
+		2EABF99D3EAF26BA8A5FB9804A58CFA9 /* DigitalInputBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DigitalInputBase.swift; path = src/DigitalInputBase.swift; sourceTree = "<group>"; };
+		2F2AAB197E1CBEF68D8D584E9F4678B5 /* Phidget22Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Phidget22Swift.framework; path = Phidget22Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		324DF38D169A388C1808BF8A6A492969 /* ManagerBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ManagerBase.swift; path = src/ManagerBase.swift; sourceTree = "<group>"; };
+		342671F831666AA5046780C6DAB01A17 /* NetBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetBase.swift; path = src/NetBase.swift; sourceTree = "<group>"; };
+		382F166B5564C130E10201689566E600 /* LCDBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LCDBase.swift; path = src/LCDBase.swift; sourceTree = "<group>"; };
+		392090B5071A9F9902DDE11BFF873564 /* Phidget22Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Phidget22Swift-umbrella.h"; sourceTree = "<group>"; };
+		3E7161921926BF1B7EAD46A5DE818367 /* CapacitiveTouch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CapacitiveTouch.swift; path = src/CapacitiveTouch.swift; sourceTree = "<group>"; };
+		3E95E294DF3F995652C68AD331F0F8D7 /* Types.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Types.swift; path = src/Types.swift; sourceTree = "<group>"; };
+		418E233406C52BF85B8768280B02EB21 /* Pods-Little Oppy-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Little Oppy-dummy.m"; sourceTree = "<group>"; };
+		43FCFE0AB61718AEC3A0F43C5D6C6718 /* TemperatureSensor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TemperatureSensor.swift; path = src/TemperatureSensor.swift; sourceTree = "<group>"; };
+		4921C46C823B75054062B4EA6EE6C6F0 /* VoltageInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VoltageInput.swift; path = src/VoltageInput.swift; sourceTree = "<group>"; };
+		4BB0A6FACAD82AEECD30D70BAD13D0E5 /* Pods-Little Oppy-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Little Oppy-frameworks.sh"; sourceTree = "<group>"; };
+		4C6023EE3BF7B9D5A2A35BAE60567F03 /* PHSensor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PHSensor.swift; path = src/PHSensor.swift; sourceTree = "<group>"; };
+		4C87F526CC79C0F9B8CD164589F53716 /* Net.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Net.swift; path = src/Net.swift; sourceTree = "<group>"; };
+		4EAC5D08EAC33E18A76E44D21E6D2A7A /* VoltageOutputBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VoltageOutputBase.swift; path = src/VoltageOutputBase.swift; sourceTree = "<group>"; };
+		5039135209685A67AD3F415672921CAA /* Manager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Manager.swift; path = src/Manager.swift; sourceTree = "<group>"; };
+		5151530830EAF79E56342BCB78BCDCF1 /* ResistanceInputBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResistanceInputBase.swift; path = src/ResistanceInputBase.swift; sourceTree = "<group>"; };
+		530420AA694B49FA03812EC483D4AC0F /* Magnetometer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Magnetometer.swift; path = src/Magnetometer.swift; sourceTree = "<group>"; };
+		56AF56442E28B273CC7F63633434F629 /* Pods-Little Oppy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Little Oppy.release.xcconfig"; sourceTree = "<group>"; };
+		57116AF3F75D56FD9C147DF08FF6A716 /* HumiditySensor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HumiditySensor.swift; path = src/HumiditySensor.swift; sourceTree = "<group>"; };
+		5A7A0D3FB88AE78CDF4C1706BFFA1B7F /* DCMotorBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DCMotorBase.swift; path = src/DCMotorBase.swift; sourceTree = "<group>"; };
+		5FD87CBCAA13E848B7CCCCB54491C679 /* Phidget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Phidget.swift; path = src/Phidget.swift; sourceTree = "<group>"; };
+		6E96525F0326179C5533D09164AA62B2 /* Pods-Little Oppy-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Little Oppy-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6EBF5DD6156B9F80F20CAA273FE36852 /* MotorPositionController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MotorPositionController.swift; path = src/MotorPositionController.swift; sourceTree = "<group>"; };
+		7002F1B95F74728BED847A0E78B8A868 /* Spatial.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Spatial.swift; path = src/Spatial.swift; sourceTree = "<group>"; };
+		70B3BB65152221D0B66616099C28B554 /* Hub.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Hub.swift; path = src/Hub.swift; sourceTree = "<group>"; };
+		71F913CD96B371A6C6D9BEE7F689A2D7 /* PHSensorBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PHSensorBase.swift; path = src/PHSensorBase.swift; sourceTree = "<group>"; };
+		733BBBCC7294E559D93AF3475D1DE542 /* DigitalOutputBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DigitalOutputBase.swift; path = src/DigitalOutputBase.swift; sourceTree = "<group>"; };
+		771A6EFAE739E239093BDE4C0EBC7CFE /* HubBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HubBase.swift; path = src/HubBase.swift; sourceTree = "<group>"; };
+		78962BE85170AAAA2FE270893CD54A8E /* PhidgetBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PhidgetBase.swift; path = src/PhidgetBase.swift; sourceTree = "<group>"; };
+		83033AD7DB6C21C40AD8CAB307F79370 /* Phidget22Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Phidget22Swift-dummy.m"; sourceTree = "<group>"; };
+		87623D0EC23B6F45869CE2043E19375F /* Log.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Log.swift; path = src/Log.swift; sourceTree = "<group>"; };
+		8DA4F7577DC383DF4B41257C2171560A /* Phidget22Swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Phidget22Swift-Info.plist"; sourceTree = "<group>"; };
+		8FF8492E8F70F17F325C294F992EAD27 /* LightSensorBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LightSensorBase.swift; path = src/LightSensorBase.swift; sourceTree = "<group>"; };
+		9136F777DC5B7E8BA4A23253B9BBDC6A /* StepperBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StepperBase.swift; path = src/StepperBase.swift; sourceTree = "<group>"; };
+		92410DF88163158752A5AF174D47A8DD /* BLDCMotor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BLDCMotor.swift; path = src/BLDCMotor.swift; sourceTree = "<group>"; };
+		933EFFB09D492965779AB8822E915606 /* libphidget22.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libphidget22.a; path = libphidget22/libphidget22.a; sourceTree = "<group>"; };
+		9880C5E0518B513F45283D4C9B3C6121 /* DistanceSensor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DistanceSensor.swift; path = src/DistanceSensor.swift; sourceTree = "<group>"; };
+		9BFC2B55B4EE4144F7A3A37AB26B5526 /* EncoderBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EncoderBase.swift; path = src/EncoderBase.swift; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9EE06128151038CEB28C320FF777E237 /* DigitalInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DigitalInput.swift; path = src/DigitalInput.swift; sourceTree = "<group>"; };
+		A0C6D1CC602A77FB745CCCBBAAF9A3F2 /* RFIDBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RFIDBase.swift; path = src/RFIDBase.swift; sourceTree = "<group>"; };
+		A9263B91708083B12689D3F279DAA8DF /* SoundSensor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SoundSensor.swift; path = src/SoundSensor.swift; sourceTree = "<group>"; };
+		AC3860B33F2E19F33E77E5DFA734031E /* MagnetometerBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MagnetometerBase.swift; path = src/MagnetometerBase.swift; sourceTree = "<group>"; };
+		ACAE8BB4135B966EF9761EF3D7E1F623 /* PowerGuard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PowerGuard.swift; path = src/PowerGuard.swift; sourceTree = "<group>"; };
+		ACBD347D639EA96BAF9BACF7ECA61953 /* SpatialBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpatialBase.swift; path = src/SpatialBase.swift; sourceTree = "<group>"; };
+		AE1A26E3DFB8B1D202BD05975D33262B /* Pods_Little_Oppy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Little_Oppy.framework; path = "Pods-Little Oppy.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEA600B26628D9D3F36D120095EF5D86 /* LCD.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LCD.swift; path = src/LCD.swift; sourceTree = "<group>"; };
+		B17401438A401A730673C3C7735E0051 /* CurrentInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CurrentInput.swift; path = src/CurrentInput.swift; sourceTree = "<group>"; };
+		B2F564ACD7FEE246CD93C4BECF917639 /* Gyroscope.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Gyroscope.swift; path = src/Gyroscope.swift; sourceTree = "<group>"; };
+		BD31544AFCD92056FAC2D1E1764FE8C6 /* GyroscopeBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GyroscopeBase.swift; path = src/GyroscopeBase.swift; sourceTree = "<group>"; };
+		BDEB0B2C7F6AF3A933962212E7C53391 /* VoltageRatioInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VoltageRatioInput.swift; path = src/VoltageRatioInput.swift; sourceTree = "<group>"; };
+		C0F787CDF3835ED262E2DD62E815AD94 /* Phidget22Swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Phidget22Swift.xcconfig; sourceTree = "<group>"; };
+		C198E8DB1E43B4207D90F653801B294A /* Accelerometer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Accelerometer.swift; path = src/Accelerometer.swift; sourceTree = "<group>"; };
+		C21228698EC730ADB42A43610DCFC344 /* SoundSensorBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SoundSensorBase.swift; path = src/SoundSensorBase.swift; sourceTree = "<group>"; };
+		C363731854B85E45051A5F2118FFCF5E /* TemperatureSensorBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TemperatureSensorBase.swift; path = src/TemperatureSensorBase.swift; sourceTree = "<group>"; };
+		C39FF47E5296247F2E0986CC85825E82 /* VoltageInputBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VoltageInputBase.swift; path = src/VoltageInputBase.swift; sourceTree = "<group>"; };
+		C510B6EBC43BA2AA244028DE6B2C8FED /* Phidget22Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Phidget22Swift-prefix.pch"; sourceTree = "<group>"; };
+		C64AE59A9254477A26992825D185453F /* Pods-Little Oppy-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Little Oppy-Info.plist"; sourceTree = "<group>"; };
+		C83EC17F352826194E6C977CF781AE7D /* RCServoBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RCServoBase.swift; path = src/RCServoBase.swift; sourceTree = "<group>"; };
+		CACEA0B6F9037B995814FEE1CB8EA122 /* CurrentInputBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CurrentInputBase.swift; path = src/CurrentInputBase.swift; sourceTree = "<group>"; };
+		CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CDBA6CB6668523F53E728640CE08EF27 /* LightSensor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LightSensor.swift; path = src/LightSensor.swift; sourceTree = "<group>"; };
+		CE093E27BB9F158B7D4A7D50D2FA660C /* DigitalOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DigitalOutput.swift; path = src/DigitalOutput.swift; sourceTree = "<group>"; };
+		CE71F94E668847D9C97839831B05E716 /* Pods-Little Oppy-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Little Oppy-acknowledgements.plist"; sourceTree = "<group>"; };
+		D3431B72CA919EB5ABA83C5DDD7C769B /* FrequencyCounter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FrequencyCounter.swift; path = src/FrequencyCounter.swift; sourceTree = "<group>"; };
+		DE27785B953C5FC541F299E730C2564C /* PhidgetError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PhidgetError.swift; path = src/PhidgetError.swift; sourceTree = "<group>"; };
+		DEFCAB2DDDB7C8C8066E55112411A4FA /* IR.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IR.swift; path = src/IR.swift; sourceTree = "<group>"; };
+		E1666AC984C929FF2D91B3B157268E4E /* ResistanceInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResistanceInput.swift; path = src/ResistanceInput.swift; sourceTree = "<group>"; };
+		E18C131BD25BCBA374DD9839EBEE6B88 /* GPS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GPS.swift; path = src/GPS.swift; sourceTree = "<group>"; };
+		E761F0E76CDACD5310C7220CD880EE61 /* RCServo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RCServo.swift; path = src/RCServo.swift; sourceTree = "<group>"; };
+		E8D4E748F831A7E6E91D36E77FC87F79 /* Pods-Little Oppy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Little Oppy.debug.xcconfig"; sourceTree = "<group>"; };
+		EA435D86E8A114157E741825A356C83E /* PressureSensor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PressureSensor.swift; path = src/PressureSensor.swift; sourceTree = "<group>"; };
+		EE86E22BBCF05763A37978EF541D3218 /* DCMotor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DCMotor.swift; path = src/DCMotor.swift; sourceTree = "<group>"; };
+		F0AFD50DB5B3DDD3505E98D5787DFBDE /* Pods-Little Oppy.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Little Oppy.modulemap"; sourceTree = "<group>"; };
+		F318F783BF70D64E78363C620CA7057C /* Phidget22Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Phidget22Swift.modulemap; sourceTree = "<group>"; };
+		F5C858016009E70473C13EDD4540447A /* FrequencyCounterBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FrequencyCounterBase.swift; path = src/FrequencyCounterBase.swift; sourceTree = "<group>"; };
+		FCD2ED9DE38B18391AEDDC240C130EEA /* DistanceSensorBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DistanceSensorBase.swift; path = src/DistanceSensorBase.swift; sourceTree = "<group>"; };
+		FD380036173A6DC992011B4813A63195 /* Dictionary.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Dictionary.swift; path = src/Dictionary.swift; sourceTree = "<group>"; };
+		FDDF9AE962B97C79F1B35CF9075E2146 /* VoltageOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VoltageOutput.swift; path = src/VoltageOutput.swift; sourceTree = "<group>"; };
+		FFDCAE6E9BB8B211838699B0EF7972AD /* DictionaryBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DictionaryBase.swift; path = src/DictionaryBase.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3CED09BC12843C0621A4986FCE7F3595 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FF7DBE1F4A54A23D9DBB74830B79C57 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA0DFF62EFAE9CC0F33CD577F4153447 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF53822838645A4CD3B217AA0E6D121B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0344050AEE92228F856E62982E6EAB25 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2F7673EABBB9DC08F989C19C7DFDFE3F /* Pods-Little Oppy */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		2F7673EABBB9DC08F989C19C7DFDFE3F /* Pods-Little Oppy */ = {
+			isa = PBXGroup;
+			children = (
+				F0AFD50DB5B3DDD3505E98D5787DFBDE /* Pods-Little Oppy.modulemap */,
+				6E96525F0326179C5533D09164AA62B2 /* Pods-Little Oppy-acknowledgements.markdown */,
+				CE71F94E668847D9C97839831B05E716 /* Pods-Little Oppy-acknowledgements.plist */,
+				418E233406C52BF85B8768280B02EB21 /* Pods-Little Oppy-dummy.m */,
+				4BB0A6FACAD82AEECD30D70BAD13D0E5 /* Pods-Little Oppy-frameworks.sh */,
+				C64AE59A9254477A26992825D185453F /* Pods-Little Oppy-Info.plist */,
+				175AB27A1AEAB920F3A9D4AD6835C2D2 /* Pods-Little Oppy-umbrella.h */,
+				E8D4E748F831A7E6E91D36E77FC87F79 /* Pods-Little Oppy.debug.xcconfig */,
+				56AF56442E28B273CC7F63633434F629 /* Pods-Little Oppy.release.xcconfig */,
+			);
+			name = "Pods-Little Oppy";
+			path = "Target Support Files/Pods-Little Oppy";
+			sourceTree = "<group>";
+		};
+		3F02715550A5D31576FEA6C431133EA9 /* Phidget22Swift */ = {
+			isa = PBXGroup;
+			children = (
+				C198E8DB1E43B4207D90F653801B294A /* Accelerometer.swift */,
+				2D642BEA3A35CE57EAF3F5131B1792F8 /* AccelerometerBase.swift */,
+				018395079B545452F985570E3334AD53 /* AsyncCallback.swift */,
+				92410DF88163158752A5AF174D47A8DD /* BLDCMotor.swift */,
+				247D35497E30786DF49E9F3B0A68910A /* BLDCMotorBase.swift */,
+				3E7161921926BF1B7EAD46A5DE818367 /* CapacitiveTouch.swift */,
+				13B2F3D4AE0E1FC932D5877D7E9960B4 /* CapacitiveTouchBase.swift */,
+				B17401438A401A730673C3C7735E0051 /* CurrentInput.swift */,
+				CACEA0B6F9037B995814FEE1CB8EA122 /* CurrentInputBase.swift */,
+				EE86E22BBCF05763A37978EF541D3218 /* DCMotor.swift */,
+				5A7A0D3FB88AE78CDF4C1706BFFA1B7F /* DCMotorBase.swift */,
+				FD380036173A6DC992011B4813A63195 /* Dictionary.swift */,
+				FFDCAE6E9BB8B211838699B0EF7972AD /* DictionaryBase.swift */,
+				9EE06128151038CEB28C320FF777E237 /* DigitalInput.swift */,
+				2EABF99D3EAF26BA8A5FB9804A58CFA9 /* DigitalInputBase.swift */,
+				CE093E27BB9F158B7D4A7D50D2FA660C /* DigitalOutput.swift */,
+				733BBBCC7294E559D93AF3475D1DE542 /* DigitalOutputBase.swift */,
+				9880C5E0518B513F45283D4C9B3C6121 /* DistanceSensor.swift */,
+				FCD2ED9DE38B18391AEDDC240C130EEA /* DistanceSensorBase.swift */,
+				2E7278F050601361EB1102890FB7D5C0 /* Encoder.swift */,
+				9BFC2B55B4EE4144F7A3A37AB26B5526 /* EncoderBase.swift */,
+				1231EAB7B9ADC4B7F37F2A96DE5FD9EE /* Event.swift */,
+				D3431B72CA919EB5ABA83C5DDD7C769B /* FrequencyCounter.swift */,
+				F5C858016009E70473C13EDD4540447A /* FrequencyCounterBase.swift */,
+				E18C131BD25BCBA374DD9839EBEE6B88 /* GPS.swift */,
+				25B69955FC46FE11BB42882B2D97B9CD /* GPSBase.swift */,
+				B2F564ACD7FEE246CD93C4BECF917639 /* Gyroscope.swift */,
+				BD31544AFCD92056FAC2D1E1764FE8C6 /* GyroscopeBase.swift */,
+				70B3BB65152221D0B66616099C28B554 /* Hub.swift */,
+				771A6EFAE739E239093BDE4C0EBC7CFE /* HubBase.swift */,
+				57116AF3F75D56FD9C147DF08FF6A716 /* HumiditySensor.swift */,
+				06FA338A26E0D8D92496A1A90A0136FE /* HumiditySensorBase.swift */,
+				DEFCAB2DDDB7C8C8066E55112411A4FA /* IR.swift */,
+				1E8E03D84F25AD89C6F0D977828821D2 /* IRBase.swift */,
+				AEA600B26628D9D3F36D120095EF5D86 /* LCD.swift */,
+				382F166B5564C130E10201689566E600 /* LCDBase.swift */,
+				CDBA6CB6668523F53E728640CE08EF27 /* LightSensor.swift */,
+				8FF8492E8F70F17F325C294F992EAD27 /* LightSensorBase.swift */,
+				87623D0EC23B6F45869CE2043E19375F /* Log.swift */,
+				2583C179842AA51D8BE7B2317C9D2F38 /* LogBase.swift */,
+				530420AA694B49FA03812EC483D4AC0F /* Magnetometer.swift */,
+				AC3860B33F2E19F33E77E5DFA734031E /* MagnetometerBase.swift */,
+				5039135209685A67AD3F415672921CAA /* Manager.swift */,
+				324DF38D169A388C1808BF8A6A492969 /* ManagerBase.swift */,
+				6EBF5DD6156B9F80F20CAA273FE36852 /* MotorPositionController.swift */,
+				02E8D3B8825CB589628448FF6FD1119C /* MotorPositionControllerBase.swift */,
+				4C87F526CC79C0F9B8CD164589F53716 /* Net.swift */,
+				342671F831666AA5046780C6DAB01A17 /* NetBase.swift */,
+				5FD87CBCAA13E848B7CCCCB54491C679 /* Phidget.swift */,
+				0377A788B04607E6F0440AE72F47A573 /* phidget22.h */,
+				78962BE85170AAAA2FE270893CD54A8E /* PhidgetBase.swift */,
+				DE27785B953C5FC541F299E730C2564C /* PhidgetError.swift */,
+				4C6023EE3BF7B9D5A2A35BAE60567F03 /* PHSensor.swift */,
+				71F913CD96B371A6C6D9BEE7F689A2D7 /* PHSensorBase.swift */,
+				ACAE8BB4135B966EF9761EF3D7E1F623 /* PowerGuard.swift */,
+				1EB135DDE769095314CE2A883964ECF8 /* PowerGuardBase.swift */,
+				EA435D86E8A114157E741825A356C83E /* PressureSensor.swift */,
+				0C7FDF03566D8E7C38B291D71599B6F7 /* PressureSensorBase.swift */,
+				E761F0E76CDACD5310C7220CD880EE61 /* RCServo.swift */,
+				C83EC17F352826194E6C977CF781AE7D /* RCServoBase.swift */,
+				E1666AC984C929FF2D91B3B157268E4E /* ResistanceInput.swift */,
+				5151530830EAF79E56342BCB78BCDCF1 /* ResistanceInputBase.swift */,
+				294511206E45DCC2E8BB2F5569F8BCDE /* RFID.swift */,
+				A0C6D1CC602A77FB745CCCBBAAF9A3F2 /* RFIDBase.swift */,
+				A9263B91708083B12689D3F279DAA8DF /* SoundSensor.swift */,
+				C21228698EC730ADB42A43610DCFC344 /* SoundSensorBase.swift */,
+				7002F1B95F74728BED847A0E78B8A868 /* Spatial.swift */,
+				ACBD347D639EA96BAF9BACF7ECA61953 /* SpatialBase.swift */,
+				03E9F3714D6D7EB7EB0E77C1EDC006AE /* Stepper.swift */,
+				9136F777DC5B7E8BA4A23253B9BBDC6A /* StepperBase.swift */,
+				43FCFE0AB61718AEC3A0F43C5D6C6718 /* TemperatureSensor.swift */,
+				C363731854B85E45051A5F2118FFCF5E /* TemperatureSensorBase.swift */,
+				3E95E294DF3F995652C68AD331F0F8D7 /* Types.swift */,
+				4921C46C823B75054062B4EA6EE6C6F0 /* VoltageInput.swift */,
+				C39FF47E5296247F2E0986CC85825E82 /* VoltageInputBase.swift */,
+				FDDF9AE962B97C79F1B35CF9075E2146 /* VoltageOutput.swift */,
+				4EAC5D08EAC33E18A76E44D21E6D2A7A /* VoltageOutputBase.swift */,
+				BDEB0B2C7F6AF3A933962212E7C53391 /* VoltageRatioInput.swift */,
+				11BBA2B6A2B70A8A3B26437BEEB0461D /* VoltageRatioInputBase.swift */,
+				EA4C55C5CF91FCD3134943783D10262E /* Frameworks */,
+				CB9D7BF9C4CB2D8F1D8E78C865027D10 /* Support Files */,
+			);
+			name = Phidget22Swift;
+			path = Phidget22Swift;
+			sourceTree = "<group>";
+		};
+		990516899C85201D1CBDA03FE8FF606D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2F2AAB197E1CBEF68D8D584E9F4678B5 /* Phidget22Swift.framework */,
+				AE1A26E3DFB8B1D202BD05975D33262B /* Pods_Little_Oppy.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9B055D0CFEA43187E72B03DED11F5662 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		A7F80A67A7F3A0DECA787AF773E3F08A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3F02715550A5D31576FEA6C431133EA9 /* Phidget22Swift */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CB9D7BF9C4CB2D8F1D8E78C865027D10 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F318F783BF70D64E78363C620CA7057C /* Phidget22Swift.modulemap */,
+				C0F787CDF3835ED262E2DD62E815AD94 /* Phidget22Swift.xcconfig */,
+				83033AD7DB6C21C40AD8CAB307F79370 /* Phidget22Swift-dummy.m */,
+				8DA4F7577DC383DF4B41257C2171560A /* Phidget22Swift-Info.plist */,
+				C510B6EBC43BA2AA244028DE6B2C8FED /* Phidget22Swift-prefix.pch */,
+				392090B5071A9F9902DDE11BFF873564 /* Phidget22Swift-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Phidget22Swift";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				A7F80A67A7F3A0DECA787AF773E3F08A /* Pods */,
+				990516899C85201D1CBDA03FE8FF606D /* Products */,
+				0344050AEE92228F856E62982E6EAB25 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B055D0CFEA43187E72B03DED11F5662 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA4C55C5CF91FCD3134943783D10262E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				933EFFB09D492965779AB8822E915606 /* libphidget22.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C406F3FA09301C4899EE1148DEC1E34D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE501794A1971D3D7DF7AEBAFE973C85 /* Pods-Little Oppy-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB8472E7051DEF4CEEEC2867846783CB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				200C6B38144CC9BA69ABF40F9F283576 /* phidget22.h in Headers */,
+				F94143497470C25D6484261E49155016 /* Phidget22Swift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		29A1889BFE06A8A6E61BEA50BAB2E120 /* Phidget22Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6D47BA3748D0F607F2869B610E0C5DF /* Build configuration list for PBXNativeTarget "Phidget22Swift" */;
+			buildPhases = (
+				FB8472E7051DEF4CEEEC2867846783CB /* Headers */,
+				D7C22E44BE728E46E1B2AC2EA1AB9D4A /* Sources */,
+				AA0DFF62EFAE9CC0F33CD577F4153447 /* Frameworks */,
+				069C0161BF0C190209AEB28F1EC6097A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Phidget22Swift;
+			productName = Phidget22Swift;
+			productReference = 2F2AAB197E1CBEF68D8D584E9F4678B5 /* Phidget22Swift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D920431617A3895CACCF7E79C0049DB5 /* Pods-Little Oppy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 850F530ADCC34170F99834C0948AD81A /* Build configuration list for PBXNativeTarget "Pods-Little Oppy" */;
+			buildPhases = (
+				C406F3FA09301C4899EE1148DEC1E34D /* Headers */,
+				4E484EAF72E49AB8A45E522813BBA16B /* Sources */,
+				3CED09BC12843C0621A4986FCE7F3595 /* Frameworks */,
+				B1E99322AEFE216BC3F315C69DCCF233 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				48F7CC92C65182EF88FA02F7DF647E3E /* PBXTargetDependency */,
+			);
+			name = "Pods-Little Oppy";
+			productName = "Pods-Little Oppy";
+			productReference = AE1A26E3DFB8B1D202BD05975D33262B /* Pods_Little_Oppy.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 990516899C85201D1CBDA03FE8FF606D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				29A1889BFE06A8A6E61BEA50BAB2E120 /* Phidget22Swift */,
+				D920431617A3895CACCF7E79C0049DB5 /* Pods-Little Oppy */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		069C0161BF0C190209AEB28F1EC6097A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1E99322AEFE216BC3F315C69DCCF233 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4E484EAF72E49AB8A45E522813BBA16B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD795771A1E38847B944E3139230E570 /* Pods-Little Oppy-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7C22E44BE728E46E1B2AC2EA1AB9D4A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0EAE3F213BDC77BAD4BB47A91CBCEAEB /* Accelerometer.swift in Sources */,
+				DDFA5C8C2B3EEED0C66F9D7787BDCE5A /* AccelerometerBase.swift in Sources */,
+				473EC4407368348435E7EE6DAF1C09E1 /* AsyncCallback.swift in Sources */,
+				792C4777D11DBD235BB6E8136FF99F32 /* BLDCMotor.swift in Sources */,
+				A4A5F12300B687C24680FBC2E720AC9F /* BLDCMotorBase.swift in Sources */,
+				F3C831CA281577CC68030694F9925014 /* CapacitiveTouch.swift in Sources */,
+				F90B9A898568BEFC4A54062C7BB2E0FB /* CapacitiveTouchBase.swift in Sources */,
+				E19E127AFBD5068C038BD69920DCF7B9 /* CurrentInput.swift in Sources */,
+				E6D78C0D493D540E0FB9E9B04EC9FC32 /* CurrentInputBase.swift in Sources */,
+				104627DC92B13887F897A1389E2526B4 /* DCMotor.swift in Sources */,
+				C1B3AC1A3FAD698ED2EFC8FC27B59BF7 /* DCMotorBase.swift in Sources */,
+				375B5399CF8AADA038E96BF08AB99E6A /* Dictionary.swift in Sources */,
+				D30F00158BF8B0A612F0454373CF4629 /* DictionaryBase.swift in Sources */,
+				CA77F98D9D40996777C50B02F0AF3ACA /* DigitalInput.swift in Sources */,
+				41BA2C459CB815D55FA7B29738531478 /* DigitalInputBase.swift in Sources */,
+				B1B55274B5E8AA07848E9B4182DED6AE /* DigitalOutput.swift in Sources */,
+				DB334F49FC69CC2D35354945378C39CE /* DigitalOutputBase.swift in Sources */,
+				2BFFBDD01457F53712D0CD1376535EB1 /* DistanceSensor.swift in Sources */,
+				4A428CDE2B346E66C54611FA51FC6BA0 /* DistanceSensorBase.swift in Sources */,
+				BFC8F3DAA268EBDB264E006237691185 /* Encoder.swift in Sources */,
+				A7BB6C1923C338C79F9912B2AA74AED3 /* EncoderBase.swift in Sources */,
+				C6BC925FEE4D92F9FCABE277A9C4164A /* Event.swift in Sources */,
+				5CB3394C9A6628FC00DA99C88CB795C4 /* FrequencyCounter.swift in Sources */,
+				EF4D390A91382A78BEDA37E3143FAC3B /* FrequencyCounterBase.swift in Sources */,
+				0DEED71AD5DC0455A3107B56F9AFCE57 /* GPS.swift in Sources */,
+				3C5A4BF87228C6516C8A6A381997FA82 /* GPSBase.swift in Sources */,
+				384FC179A28C0234F81EAE790AE504A5 /* Gyroscope.swift in Sources */,
+				C3C4916190A64C96E96B735A80BBE182 /* GyroscopeBase.swift in Sources */,
+				BBBBEC72F3C67E75B268CEADF6CC607B /* Hub.swift in Sources */,
+				83302B52A28FDE3A0FC029063D86B485 /* HubBase.swift in Sources */,
+				272C299B52855FA308B436275112B7F3 /* HumiditySensor.swift in Sources */,
+				DB8B0D1E9689A85F142CD95459E26C68 /* HumiditySensorBase.swift in Sources */,
+				A0259EE24DAF6DC8A7AE069803BCFDD9 /* IR.swift in Sources */,
+				955376F52F37CC6B3142775E1D855601 /* IRBase.swift in Sources */,
+				D5B0FF35AAD567664747E752ADEE5583 /* LCD.swift in Sources */,
+				9C27E15E7D9271C4192FA821ECC5F558 /* LCDBase.swift in Sources */,
+				7D34B4F527DC83554E00E4641249289C /* LightSensor.swift in Sources */,
+				0D734F88FFE34F15A4D73C9BCD08C1C6 /* LightSensorBase.swift in Sources */,
+				DF5ED3B740A5AE8C35B717D92366D287 /* Log.swift in Sources */,
+				284FC229DD0C778BF463E65AA80B371F /* LogBase.swift in Sources */,
+				B9FF4B4A10E661536FCDDA67A7CF160C /* Magnetometer.swift in Sources */,
+				61B7E76F32815CF2B6BCE3580CFABAD0 /* MagnetometerBase.swift in Sources */,
+				F474A955E70036D9B2FC26B7BC86D113 /* Manager.swift in Sources */,
+				94C5C5272BAA3ED2E6EC647BF525D64F /* ManagerBase.swift in Sources */,
+				DE8A61C5F9BA66C73499475CA814A194 /* MotorPositionController.swift in Sources */,
+				3BCB901EA0DD9EBCEC374CF6C2D8B3E1 /* MotorPositionControllerBase.swift in Sources */,
+				32F00994E608DEDE7FA92FC98640EEAB /* Net.swift in Sources */,
+				685A59292A3F0F3BB42690D1C097799C /* NetBase.swift in Sources */,
+				4EF40EBCB8C6D38C3CFC5F1D299C7DCF /* Phidget.swift in Sources */,
+				6E27EA8636D0D7869EE77E23C327211B /* Phidget22Swift-dummy.m in Sources */,
+				6A52BCB9EEECC926B55804AAE46A0265 /* PhidgetBase.swift in Sources */,
+				72950BCC07C1C97D3C4F9755AB777166 /* PhidgetError.swift in Sources */,
+				6749B7D3004231858A10DE9AB1D06798 /* PHSensor.swift in Sources */,
+				2E1B7D4504B806042EAF00969BD87466 /* PHSensorBase.swift in Sources */,
+				2375BED7DAAC432C33CBF73F478BC036 /* PowerGuard.swift in Sources */,
+				5B6DE597EC2B334334B294C1879C119B /* PowerGuardBase.swift in Sources */,
+				2A9AABFBB018A8CB5491250E3413EF83 /* PressureSensor.swift in Sources */,
+				EA10DA565045A8A9FE624B7492C01C9A /* PressureSensorBase.swift in Sources */,
+				8E4E5BD9ACE632AE9A1119BFAF75DDBD /* RCServo.swift in Sources */,
+				1156FF15B15DDEFAE19954EBE1401CC7 /* RCServoBase.swift in Sources */,
+				22FEC62069B7D913DE549494C028BCC7 /* ResistanceInput.swift in Sources */,
+				97810C347D974C778E2A24B2FE0B6E44 /* ResistanceInputBase.swift in Sources */,
+				5814D0C74B44192762F46A681A8EE694 /* RFID.swift in Sources */,
+				D5097CA2ED85C1A4C02CCFD00C1B17F1 /* RFIDBase.swift in Sources */,
+				87BA9DAB8560BAB992F49C519B2C2889 /* SoundSensor.swift in Sources */,
+				BB3134E7EA58281E4EFE048E73AB5ECD /* SoundSensorBase.swift in Sources */,
+				8BE73F635A17A12A4092D964E85CB808 /* Spatial.swift in Sources */,
+				08A6F34232C21F49E6B2143AD7524234 /* SpatialBase.swift in Sources */,
+				715485EC9D08FAF0A002A074D196B94C /* Stepper.swift in Sources */,
+				BDB2C131ECFA7EEB2FA999E93BC1E860 /* StepperBase.swift in Sources */,
+				8E8BEBCC08AE95D34674BBD908EDF287 /* TemperatureSensor.swift in Sources */,
+				A44A53A6C314C8B5020D779A4120C484 /* TemperatureSensorBase.swift in Sources */,
+				7B3E105165AEBAD81171AAF038D6F651 /* Types.swift in Sources */,
+				C782161232123BC8957583FCDD145F29 /* VoltageInput.swift in Sources */,
+				E36D18F77576FB8D74C11E1FA8398C0B /* VoltageInputBase.swift in Sources */,
+				C0F11A4E64CD90F3B8E2BC455A577AC8 /* VoltageOutput.swift in Sources */,
+				476F79C8E302F84C78B1361961669979 /* VoltageOutputBase.swift in Sources */,
+				B3F1964477ACDEB9DC1125586D4D028D /* VoltageRatioInput.swift in Sources */,
+				79193E09AE9206B4B10F01BC2A4691E3 /* VoltageRatioInputBase.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		48F7CC92C65182EF88FA02F7DF647E3E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Phidget22Swift;
+			target = 29A1889BFE06A8A6E61BEA50BAB2E120 /* Phidget22Swift */;
+			targetProxy = 79DB7FF3829B29A4ECCCA0818A06F61A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		033D97FF6EA2A559B8E7CF0E30267F97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8D4E748F831A7E6E91D36E77FC87F79 /* Pods-Little Oppy.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Little Oppy/Pods-Little Oppy-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Little Oppy/Pods-Little Oppy.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		105FDD3778234D760B2099405D8B0552 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0F787CDF3835ED262E2DD62E815AD94 /* Phidget22Swift.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Phidget22Swift/Phidget22Swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Phidget22Swift/Phidget22Swift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Phidget22Swift/Phidget22Swift.modulemap";
+				PRODUCT_MODULE_NAME = Phidget22Swift;
+				PRODUCT_NAME = Phidget22Swift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 3.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6B197532BD0D8A7863125ECECD553554 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0F787CDF3835ED262E2DD62E815AD94 /* Phidget22Swift.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Phidget22Swift/Phidget22Swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Phidget22Swift/Phidget22Swift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Phidget22Swift/Phidget22Swift.modulemap";
+				PRODUCT_MODULE_NAME = Phidget22Swift;
+				PRODUCT_NAME = Phidget22Swift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 3.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7201F0292D1077A86F036F7721D72E61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56AF56442E28B273CC7F63633434F629 /* Pods-Little Oppy.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Little Oppy/Pods-Little Oppy-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Little Oppy/Pods-Little Oppy.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A105C1752A0A49B30ED621B71E226CDB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		C1391485F05B41BD35738A433056B7FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1391485F05B41BD35738A433056B7FA /* Debug */,
+				A105C1752A0A49B30ED621B71E226CDB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		850F530ADCC34170F99834C0948AD81A /* Build configuration list for PBXNativeTarget "Pods-Little Oppy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				033D97FF6EA2A559B8E7CF0E30267F97 /* Debug */,
+				7201F0292D1077A86F036F7721D72E61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C6D47BA3748D0F607F2869B610E0C5DF /* Build configuration list for PBXNativeTarget "Phidget22Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B197532BD0D8A7863125ECECD553554 /* Debug */,
+				105FDD3778234D760B2099405D8B0552 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
