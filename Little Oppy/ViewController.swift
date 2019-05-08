@@ -15,7 +15,8 @@ class ViewController: UIViewController {
     let stickY = VoltageRatioInput()
     let stickX = VoltageRatioInput()
     let distSensor = DistanceSensor()
-    let objDetected : Bool = true
+    var objDetected : Bool = false
+    
     func attachHandler(sender: Phidget) {
         do {
             if (try sender.getHubPort() == 0) {
@@ -40,17 +41,34 @@ class ViewController: UIViewController {
         do {
             let xVoltageRatio = try stickX.getVoltageRatio()
             let yVoltageRatio = try stickY.getVoltageRatio()
-            if ( xVoltageRatio > 0.5) {
-             
-                try lMotor.setTargetVelocity(xVoltageRatio)
-                try rMotor.setTargetVelocity(-yVoltageRatio)
+            if (xVoltageRatio > 0.5) {
+                switch objDetected {
+                case false:
+                    try lMotor.setTargetVelocity(xVoltageRatio)
+                    try rMotor.setTargetVelocity(-yVoltageRatio)
+                default:
+                    print("car is backing up")
+                }
+
             } else if (xVoltageRatio < -0.5) {
-                try lMotor.setTargetVelocity(yVoltageRatio)
-                try rMotor.setTargetVelocity(xVoltageRatio)
+                switch objDetected {
+                case false:
+                    try lMotor.setTargetVelocity(yVoltageRatio)
+                    try rMotor.setTargetVelocity(xVoltageRatio)
+                default:
+                    print("car is backing up")
+                }
+                
   
             } else {
-                try lMotor.setTargetVelocity(yVoltageRatio)
-                try rMotor.setTargetVelocity(-yVoltageRatio)
+                switch objDetected {
+                case false:
+                    try lMotor.setTargetVelocity(yVoltageRatio)
+                    try rMotor.setTargetVelocity(-yVoltageRatio)
+                default:
+                    print("car is backing up")
+                }
+                
             }
         } catch let err as PhidgetError {
             print("error 1 in voltage")
@@ -65,10 +83,11 @@ class ViewController: UIViewController {
         do {
             let distance = try distSensor.getDistance()
             if(distance <= 80) {
-                try lMotor.setTargetVelocity(0)
-                try rMotor.setTargetVelocity(0)
+                objDetected = true
+                try lMotor.setTargetVelocity(-0.8)
+                try rMotor.setTargetVelocity(0.8)
             } else {
-                
+                objDetected = false
             }
         } catch let err as PhidgetError {
             print(err)
@@ -84,6 +103,7 @@ class ViewController: UIViewController {
         do {
            
             try Net.enableServerDiscovery(serverType: .deviceRemote)
+            try Net.addServer(serverName: "phidgetsbc", address: "192.168.99.1", port: 5661, password: "", flags: 0);
             
             try rMotor.setDeviceSerialNumber(527997)
             try rMotor.setHubPort(0)
