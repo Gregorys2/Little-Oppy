@@ -8,6 +8,7 @@
 
 import UIKit
 import Phidget22Swift
+import AVFoundation
 
 class ViewController: UIViewController {
     //global variables
@@ -24,9 +25,10 @@ class ViewController: UIViewController {
     var leftDetected : Bool = false
     var rightDetected : Bool = false
     var frontDetected: Bool = false
+    var recentRight : Bool = false
+    var recentLeft : Bool = true
     
     //attach handler
-    
     func attachHandler(sender: Phidget) {
         do {
             if (try sender.getHubPort() == 0) {
@@ -135,24 +137,29 @@ class ViewController: UIViewController {
             //distance is the distance between the sonar and nearest object
             let distance = try frontSensor.getDistance()
             //if distance is less than or equal to 80
-                if(distance<=300 && distance >= 81){
-                    
-                } else if(distance <= 80 ){
+                if(distance<=300 && distance >= 40){
+                    //if the right and left sensor detect something
                     if(rightDetected && leftDetected == true){
-                    try lMotor.setTargetVelocity(-1)
-                    try rMotor.setTargetVelocity(1)
-                } else if(rightDetected == true || leftDetected == false) {
-                    try lMotor.setTargetVelocity(1)
-                    try rMotor.setTargetVelocity(1)
-                } else if(rightDetected == false || leftDetected == true){
-                    try lMotor.setTargetVelocity(-1)
-                    try rMotor.setTargetVelocity(-1)
-                }
+                        //back up
+                        backUp()
+                    } else if(rightDetected == true || leftDetected == false){
+                        //back up to the left to avoid the right wall
+                        try lMotor.setTargetVelocity(-1)
+                        try rMotor.setTargetVelocity(0)
+                    } else if(rightDetected == false || leftDetected == true){
+                        //back up to the right to avoid left wall
+                        try lMotor.setTargetVelocity(0)
+                        try rMotor.setTargetVelocity(1)
+                    } else {
+                        //back up towards the left
+                        try lMotor.setTargetVelocity(-1)
+                        try rMotor.setTargetVelocity(0.5)
+                    }
             } else {
+                    //otherwise just go forwards
                 try lMotor.setTargetVelocity(1)
                 try rMotor.setTargetVelocity(-1)
             }
-            
         } catch let err as PhidgetError {
             print(err)
         } catch {
@@ -160,63 +167,140 @@ class ViewController: UIViewController {
         }
     }
     
+    func rightDistChange(sender: DistanceSensor, distance: UInt32){
+        do {
+            let distance = try rightSensor.getDistance()
+            if(distance >= 80 && distance <= 200){
+                //if we detect something on the right, right detected is true
+                rightDetected = true
+            } else {
+                //otherwise the latter is false
+                rightDetected = false
+            }
+        }catch let err as PhidgetError {
+            print(err)
+        } catch {
+            print(error)
+        }
+    }
+    
+    func leftDistChange(sender: DistanceSensor, distance: UInt32){
+        do {
+            let distance = try leftSensor.getDistance()
+            if(distance >= 80 && distance <= 200){
+                //if something is detected on the left turn left detected to true
+                leftDetected = true
+            } else {
+                //otherwise its false
+                leftDetected = false
+            }
+        }catch let err as PhidgetError {
+            print(err)
+        } catch {
+            print(error)
+        }
+    }
+    
+    // when you call this function...
     func voltageToggleOn() {
+        //toggle the voltage off first
         voltageToggleOff()
+        //then register all these handlers
         let _ = frontSensor.distanceChange.addHandler(distChange)
         let _ = stickX.voltageRatioChange.addHandler(voltageChanger)
         let _ = stickY.voltageRatioChange.addHandler(voltageChanger)
     }
     
     func voltageToggleOff() {
+        //when this function is called, remove every handler from the phidgets
         let _ = frontSensor.distanceChange.removeAllHandlers()
         let _ = stickX.voltageRatioChange.removeAllHandlers()
         let _ = stickY.voltageRatioChange.removeAllHandlers()
+        let _ = leftSensor.distanceChange.removeAllHandlers()
+        let _ = rightSensor.distanceChange.removeAllHandlers()
+    }
+    
+    func backUp() {
+        do{
+            //if both sides are still detecting objects
+            if(leftDetected == true || rightDetected == true) {
+                //back up
+                try lMotor.setTargetVelocity(-1)
+                try rMotor.setTargetVelocity(1)
+            } else {
+                //if not, back up towards the slight left.
+                try lMotor.setTargetVelocity(-1)
+                try rMotor.setTargetVelocity(0.5)
+            }
+        } catch let err as PhidgetError{
+            print(err)
+        } catch {
+            print(error)
+        }
     }
     
     func nullifySpeed() {
         do {
+            //sets the speed to 0.
             try lMotor.setTargetVelocity(0)
             try rMotor.setTargetVelocity(0)
         } catch let err as PhidgetError {
-            print("error 1 in voltage toggle")
+            print("error 1 in speed stop")
             print(err)
         } catch {
-            print("error 2 in voltage toggle")
+            print("error 2 in speed stop")
             print(error)
         }
     }
     
     func autoPilot() {
+        //put these 3 handlers on all 3 sensors.
         let _ = frontSensor.distanceChange.addHandler(frontDistChange)
+        let _ = leftSensor.distanceChange.addHandler(leftDistChange)
+        let _ = rightSensor.distanceChange.addHandler(rightDistChange)
     }
     
-    
+    //whenever the auto drive button is pressed...
     @IBAction func autoDrive(_ sender: Any) {
         switch autoToggle {
+            //is autotoggle true?
         case true:
+            //turn both toggles off
             manualToggle = false
             autoToggle = false
+            //turn the voltage off
             voltageToggleOff()
+            //nullify the speed
             nullifySpeed()
         default:
+            //if not turn manual toggle off and autotoggle true
             manualToggle = false
             autoToggle = true
+            //turn the voltage toggle as off
             voltageToggleOff()
+            //autopilot it!
             autoPilot()
         }
     }
-    
+    //whenever the manual drive button is clicked...
     @IBAction func manDrive(_ sender: Any) {
         switch manualToggle{
+            //is manual toggle true?
         case true:
+            //switch both toggles off
             manualToggle = false
             autoToggle = false
+            //turn off the voltage
             voltageToggleOff()
+            //nullify the speed
             nullifySpeed()
         default:
+            //if not switch autotoggle off and turn manual toggle as true
             autoToggle = false
             manualToggle = true
+            //turn off the voltage
             voltageToggleOff()
+            //then turn it on again
             voltageToggleOn()
         }
     }
@@ -230,7 +314,7 @@ class ViewController: UIViewController {
             try Net.enableServerDiscovery(serverType: .deviceRemote)
             //ooh this is new. add a server named phidgets bc at ip address 192.168.99.1, with a port of 5661 with no password with 0 flags
             try Net.addServer(serverName: "phidgetsbc", address: "192.168.99.1", port: 5661, password: "", flags: 0);
-            
+            //set devices serial number and hub ports and etc.
             try rMotor.setDeviceSerialNumber(512806)
             try rMotor.setHubPort(0)
             try rMotor.setIsHubPortDevice(false)
@@ -262,7 +346,7 @@ class ViewController: UIViewController {
             try leftSensor.setIsHubPortDevice(false)
 
 
-            
+            //attach handlers
             let _ = frontSensor.attach.addHandler(attachHandler)
             let _ = leftSensor.attach.addHandler(attachHandler)
             let _ = rightSensor.attach.addHandler(attachHandler)
@@ -271,6 +355,7 @@ class ViewController: UIViewController {
             let _ = stickY.attach.addHandler(attachHandler)
             let _ = stickX.attach.addHandler(attachHandler)
             
+            //open them all
             try rMotor.open()
             try lMotor.open()
             try frontSensor.open()
