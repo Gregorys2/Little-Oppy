@@ -166,12 +166,14 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Little Oppy/Pods-Little Oppy-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MJPEGStreamLib/MJPEGStreamLib.framework",
 				"${BUILT_PRODUCTS_DIR}/Phidget22Swift/Phidget22Swift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJPEGStreamLib.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Phidget22Swift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,4 +7,5 @@ target 'Little Oppy' do
 
   # Pods for Little Oppy
 pod 'Phidget22Swift'
+pod 'MJPEGStreamLib'
 end

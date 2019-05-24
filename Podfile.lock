@@ -1,16 +1,20 @@
 PODS:
+  - MJPEGStreamLib (0.2.0)
   - Phidget22Swift (1.0.36)
 
 DEPENDENCIES:
+  - MJPEGStreamLib
   - Phidget22Swift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - MJPEGStreamLib
     - Phidget22Swift
 
 SPEC CHECKSUMS:
+  MJPEGStreamLib: b6369fb6370413b9f76ef0df2c1cac985ee34bfa
   Phidget22Swift: 05d2dae1cec2ea4f8e217519236a721ac0e6fae3
 
-PODFILE CHECKSUM: 26c07b5b04c42880678c6022f2b3c65e44373d9f
+PODFILE CHECKSUM: 7d6dc5fbbe51b0907c1ac6815b25819e8efed597
 
 COCOAPODS: 1.6.1

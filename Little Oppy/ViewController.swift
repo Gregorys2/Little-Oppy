@@ -8,7 +8,7 @@
 
 import UIKit
 import Phidget22Swift
-import AVFoundation
+import MJPEGStreamLib
 
 class ViewController: UIViewController {
     //global variables
@@ -27,6 +27,9 @@ class ViewController: UIViewController {
     var frontDetected: Bool = false
     var recentRight : Bool = false
     var recentLeft : Bool = true
+    var webcamStream: MJPEGStreamLib!
+    var url: URL?
+
     
     //attach handler
     func attachHandler(sender: Phidget) {
@@ -305,10 +308,22 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var webcamImageView: UIImageView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         //all startup stuff. youve seen this before
+        // Set the ImageView to the stream object
+        webcamStream = MJPEGStreamLib(imageView: webcamImageView)
+        // Webcam URL
+        let url = URL(string: "http://192.168.99.1:81/?action=stream")
+        webcamStream.contentURL = url
+        webcamStream.play() // Play the stream
+    
+   
         do {
            
             try Net.enableServerDiscovery(serverType: .deviceRemote)
@@ -372,6 +387,15 @@ class ViewController: UIViewController {
             print(error)
         }
         
+    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    // Make the Status Bar Light/Dark Content for this View
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
+        //return UIStatusBarStyle.default   // Make dark again
     }
 }
 

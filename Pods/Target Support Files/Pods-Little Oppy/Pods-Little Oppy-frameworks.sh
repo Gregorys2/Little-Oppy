@@ -153,9 +153,11 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/MJPEGStreamLib/MJPEGStreamLib.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Phidget22Swift/Phidget22Swift.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/MJPEGStreamLib/MJPEGStreamLib.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Phidget22Swift/Phidget22Swift.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
