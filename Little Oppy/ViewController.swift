@@ -19,14 +19,15 @@ class ViewController: UIViewController {
     let frontSensor = DistanceSensor()
     let rightSensor = DistanceSensor()
     let leftSensor = DistanceSensor()
+    let tiltController = Accelerometer()
+    let directionalityFinder = Spatial()
     var manualToggle : Bool = false
     var autoToggle : Bool = false
+    var tiltToggle : Bool = false
     var objDetected : Bool = false
     var leftDetected : Bool = false
     var rightDetected : Bool = false
     var frontDetected: Bool = false
-    var recentRight : Bool = false
-    var recentLeft : Bool = true
     var webcamStream: MJPEGStreamLib!
     var url: URL?
 
@@ -45,7 +46,6 @@ class ViewController: UIViewController {
             } else if (try sender.getHubPort() == 4) {
                 print("Left sensor attached")
             } else {
-                print("Thumbstick calibrated")
             }
         } catch let err as PhidgetError {
             print("error 1 in attach")
@@ -54,6 +54,28 @@ class ViewController: UIViewController {
             print("error 2 in attach")
             print(error)
         }
+    }
+    
+    //Wired version of the attach handler.
+    func wiredAttachHandler(sender: Phidget) {
+        do {
+            if (try sender.getHubPort() == 0) {
+                print("Thumbstick Calibrated")
+            } else {
+                print("Accelerometer Calibrated")
+            }
+        } catch let err as PhidgetError {
+    print("error 1 in attach")
+    print(err)
+    } catch {
+    print("error 2 in attach")
+    print(error)
+    }
+    }
+    
+    //WHY DOES SWIFT RECORD IN RADIANS?!?!?!?!?!??!?!?!?!?!??!?!?!
+    func radToDeg(number: Double) -> Double {
+        return number * 180 / .pi
     }
     
     //THE VOLTAGE CHANGER! It takes two inputs, sender and voltageratio.
@@ -73,7 +95,7 @@ class ViewController: UIViewController {
                     try rMotor.setTargetVelocity(-yVoltageRatio)
                 default:
                     //if not, print car is backing up
-                    print("car is backing up")
+                print("Please wait! I am backing up! There's something in the way!")
                 }
                 //if xvoltageratio is less than -0.5
             } else if (xVoltageRatio < -0.5) {
@@ -85,7 +107,7 @@ class ViewController: UIViewController {
                     try rMotor.setTargetVelocity(xVoltageRatio)
                 default:
                     //if yes, tell the car its backing up
-                    print("car is backing up")
+                    print("Please wait! I am backing up! There's something in the way!")
                 }
                 
   
@@ -100,7 +122,7 @@ class ViewController: UIViewController {
                     try rMotor.setTargetVelocity(-yVoltageRatio)
                 default:
                     //otherwise car is backing up
-                    print("car is backing up")
+                    print("Please wait! I am backing up! There's something in the way!")
                 }
                 
             }
@@ -135,6 +157,7 @@ class ViewController: UIViewController {
         }
     }
     
+    //Front Sensor Distance Changer
     func frontDistChange(sender: DistanceSensor, distance: UInt32) {
         do {
             //distance is the distance between the sonar and nearest object
@@ -169,7 +192,7 @@ class ViewController: UIViewController {
             print(error)
         }
     }
-    
+    //Right distance changer
     func rightDistChange(sender: DistanceSensor, distance: UInt32){
         do {
             let distance = try rightSensor.getDistance()
@@ -221,6 +244,7 @@ class ViewController: UIViewController {
         let _ = stickY.voltageRatioChange.removeAllHandlers()
         let _ = leftSensor.distanceChange.removeAllHandlers()
         let _ = rightSensor.distanceChange.removeAllHandlers()
+        let _ = tiltController.accelerationChange.removeAllHandlers()
     }
     
     func backUp() {
@@ -263,21 +287,90 @@ class ViewController: UIViewController {
         let _ = rightSensor.distanceChange.addHandler(rightDistChange)
     }
     
+    func tiltPilot() {
+        let _ = frontSensor.distanceChange.addHandler(distChange)
+        let _ = tiltController.accelerationChange.addHandler(tiltControls)
+    }
+    
+    func tiltControls(sender: Accelerometer, data: (acceleration: [Double], timestamp: Double)) ->() {
+        do {
+            //most accurate data readings!
+            try tiltController.setDataInterval(20)
+            let acceleration = try tiltController.getAcceleration()
+            //the acceleration is in an array of double values
+            let zAxis = acceleration[2]
+            let yAxis = acceleration[1]
+            let xAxis = acceleration[0]
+            //These are tangent ratios
+            let pitchAngleRatio : Double = xAxis / zAxis
+            let rollAngleRatio : Double = yAxis / zAxis
+            
+            //I LOVE TRIGONOMETRIC RATIOS AND PHYSICS
+            let pitchAngle = atan(pitchAngleRatio)
+            let rollAngle = atan(rollAngleRatio)
+            //Change it into degrees cuz radians are gross ew
+            let rollAngleDegrees = radToDeg(number: pitchAngle)
+            let pitchAngleDegrees = radToDeg(number: rollAngle)
+            //If the player is tilting it to the right
+            if(pitchAngleDegrees > 45){
+                //is the front sensor detecting an object?
+            switch(objDetected){
+            case false:
+                //turn right
+                try lMotor.setTargetVelocity(pitchAngleDegrees * 0.0111111111111)
+                try rMotor.setTargetVelocity(rollAngleDegrees * 0.0111111111111)
+            default:
+                //let the car back up
+                print("Please wait! I am backing up! There's something in the way!")
+                }
+                //else if we're tilting to the left
+            } else if(pitchAngleDegrees < -45){
+                //is the front sensor detecting an object
+                    switch(objDetected){
+                    case false:
+                        //turn left
+                        try lMotor.setTargetVelocity(rollAngleDegrees * 0.0111111111111)
+                        try rMotor.setTargetVelocity(pitchAngleDegrees * 0.0111111111111)
+                    default:
+                        //let the car back up
+                        print("Please wait! I am backing up! There's something in the way!")
+                    }
+            } else {
+                //is an object detected
+                switch(objDetected){
+                case false:
+                    //go forward
+                    try lMotor.setTargetVelocity(rollAngleDegrees * 0.0111111111111)
+                    try rMotor.setTargetVelocity(-rollAngleDegrees * 0.0111111111111)
+                default:
+                    //let the car back up
+                    print("Please wait! I am backing up! There's something in the way!")
+                }
+            }
+        } catch let err as PhidgetError {
+            print(err)
+        } catch {
+            print(error)
+        }
+    }
+    
     //whenever the auto drive button is pressed...
     @IBAction func autoDrive(_ sender: Any) {
         switch autoToggle {
             //is autotoggle true?
         case true:
-            //turn both toggles off
+            //turn all toggles off
             manualToggle = false
             autoToggle = false
+            tiltToggle = false
             //turn the voltage off
             voltageToggleOff()
             //nullify the speed
             nullifySpeed()
         default:
-            //if not turn manual toggle off and autotoggle true
+            //if not turn all other toggles off and autotoggle true
             manualToggle = false
+            tiltToggle = false
             autoToggle = true
             //turn the voltage toggle as off
             voltageToggleOff()
@@ -290,15 +383,17 @@ class ViewController: UIViewController {
         switch manualToggle{
             //is manual toggle true?
         case true:
-            //switch both toggles off
+            //switch all toggles off
             manualToggle = false
             autoToggle = false
+            tiltToggle = false
             //turn off the voltage
             voltageToggleOff()
             //nullify the speed
             nullifySpeed()
         default:
-            //if not switch autotoggle off and turn manual toggle as true
+            //if not switch all other toggles off and turn manual toggle as true
+            tiltToggle = false
             autoToggle = false
             manualToggle = true
             //turn off the voltage
@@ -308,6 +403,32 @@ class ViewController: UIViewController {
         }
     }
     
+    
+    @IBAction func tiltDrive(_ sender: Any) {
+        switch tiltToggle {
+        case true:
+            //switch all toggles off
+            manualToggle = false
+            autoToggle = false
+            tiltToggle = false
+            //turn off the voltage
+            voltageToggleOff()
+            //nullify the speed
+            nullifySpeed()
+        default:
+            //if not switch all other toggles off and turn tilt toggle as true
+            tiltToggle = true
+            autoToggle = false
+            manualToggle = false
+            //turn off voltage
+            voltageToggleOff()
+            //then tilt pilot!
+            tiltPilot()
+        }
+    }
+    
+    
+    
     @IBOutlet weak var webcamImageView: UIImageView!
     
     
@@ -316,10 +437,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         //all startup stuff. youve seen this before
+        
         // Set the ImageView to the stream object
         webcamStream = MJPEGStreamLib(imageView: webcamImageView)
         // Webcam URL
         let url = URL(string: "http://192.168.99.1:81/?action=stream")
+        //The content of the image view should contain the stream
         webcamStream.contentURL = url
         webcamStream.play() // Play the stream
     
@@ -339,14 +462,19 @@ class ViewController: UIViewController {
             try lMotor.setIsHubPortDevice(false)
             
             try stickY.setDeviceSerialNumber(527997)
-            try stickY.setHubPort(5)
+            try stickY.setHubPort(0)
             try stickY.setIsHubPortDevice(false)
             try stickY.setChannel(0)
             
             try stickX.setDeviceSerialNumber(527997)
-            try stickX.setHubPort(5)
+            try stickX.setHubPort(0)
             try stickX.setIsHubPortDevice(false)
             try stickX.setChannel(1)
+            
+            try tiltController.setDeviceSerialNumber(527997)
+            try tiltController.setHubPort(1)
+            try tiltController.setIsHubPortDevice(false)
+           
             
             try frontSensor.setDeviceSerialNumber(512806)
             try frontSensor.setHubPort(2)
@@ -359,7 +487,7 @@ class ViewController: UIViewController {
             try leftSensor.setDeviceSerialNumber(512806)
             try leftSensor.setHubPort(4)
             try leftSensor.setIsHubPortDevice(false)
-
+            
 
             //attach handlers
             let _ = frontSensor.attach.addHandler(attachHandler)
@@ -367,8 +495,9 @@ class ViewController: UIViewController {
             let _ = rightSensor.attach.addHandler(attachHandler)
             let _ = rMotor.attach.addHandler(attachHandler)
             let _ = lMotor.attach.addHandler(attachHandler)
-            let _ = stickY.attach.addHandler(attachHandler)
-            let _ = stickX.attach.addHandler(attachHandler)
+            let _ = stickY.attach.addHandler(wiredAttachHandler)
+            let _ = stickX.attach.addHandler(wiredAttachHandler)
+            let _ = tiltController.attach.addHandler(wiredAttachHandler)
             
             //open them all
             try rMotor.open()
@@ -378,6 +507,7 @@ class ViewController: UIViewController {
             try rightSensor.open()
             try stickX.open()
             try stickY.open()
+            try tiltController.open()
             
         } catch let err as PhidgetError {
             print("error 1 in startup")
@@ -395,7 +525,8 @@ class ViewController: UIViewController {
     // Make the Status Bar Light/Dark Content for this View
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return UIStatusBarStyle.lightContent
-        //return UIStatusBarStyle.default   // Make dark again
+        //return UIStatusBarStyle.default
+        // ^^ Make dark again
     }
 }
 
