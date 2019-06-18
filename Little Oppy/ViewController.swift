@@ -210,6 +210,7 @@ class ViewController: UIViewController {
         }
     }
     
+    //Left distance changer
     func leftDistChange(sender: DistanceSensor, distance: UInt32){
         do {
             let distance = try leftSensor.getDistance()
@@ -428,7 +429,7 @@ class ViewController: UIViewController {
     }
     
     
-    
+    //Image view
     @IBOutlet weak var webcamImageView: UIImageView!
     
     
@@ -438,7 +439,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         //all startup stuff. youve seen this before
         
-        // Set the ImageView to the stream object
+        // Set the ImageView to the stream object, thanks cocoapods
         webcamStream = MJPEGStreamLib(imageView: webcamImageView)
         // Webcam URL
         let url = URL(string: "http://192.168.99.1:81/?action=stream")
